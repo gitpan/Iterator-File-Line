@@ -1,4 +1,4 @@
-# $Id: /mirror/perl/Iterator-File-Line/trunk/lib/Iterator/File/Line.pm 41556 2008-02-07T07:57:25.387059Z daisuke  $
+# $Id: /mirror/perl/Iterator-File-Line/trunk/lib/Iterator/File/Line.pm 42691 2008-02-25T01:07:47.310615Z daisuke  $
 #
 # Copyright (c) 2008 Daisuke Maki <daisuke@endeworks.jp>
 # All rights reserved.
@@ -8,7 +8,7 @@ use strict;
 use warnings;
 use base qw(Class::Accessor::Fast);
 
-our $VERSION = '0.00001';
+our $VERSION = '0.00002';
 
 __PACKAGE__->mk_accessors($_) for qw(source filter chomp encoding eol);
 
@@ -32,7 +32,7 @@ sub new_from_file
     my %args  = @_;
 
     my $filename = delete $args{filename};
-    open(my $fh, '>', $filename) or die "Could not open $filename";
+    open(my $fh, '<', $filename) or die "Could not open $filename";
 
     $class->new_from_fh( %args, fh => $fh );
 }

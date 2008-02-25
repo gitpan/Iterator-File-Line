@@ -20,4 +20,4 @@ requires:
   Class::Accessor::Fast: 0
   PerlIO::encoding: 0
   PerlIO::eol: 0
-version: 0.00001
+version: 0.00002
